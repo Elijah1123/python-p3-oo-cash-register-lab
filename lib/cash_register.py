@@ -26,3 +26,22 @@ class CashRegister:
         self.total -= self.last_transaction_amount
         self.last_transaction_amount = 0
 
+# Create a register with a 20% discount
+register = CashRegister(discount=20)
+
+# Add items
+register.add_item("Apple", 1.50, 3)   # 3 Apples at $1.50 each
+register.add_item("Banana", 2.00)     # 1 Banana at $2.00
+
+# Show current total
+print("Current total:", register.total)  
+
+# Apply discount
+register.apply_discount()
+
+# Void last transaction (Banana in this case)
+register.void_last_transaction()
+print("After voiding last transaction:", register.total)
+
+# Show all items
+print("Items in register:", register.items)
